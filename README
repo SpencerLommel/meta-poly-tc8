@@ -1,3 +1,7 @@
+This is a work in progress! I have been reverse engineering the Poly TC8 Touch Screen video conference controller.
+It runs a custom Android OS but I was able to extract the firmware and get the device tree and
+I'm working building a custom linux image to run on it.
+
 This README file contains information on the contents of the meta-poly-tc8 layer.
 
 Please see the corresponding sections below for details.
