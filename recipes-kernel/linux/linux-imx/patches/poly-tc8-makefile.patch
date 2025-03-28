@@ -1,0 +1,4 @@
+--- a/arch/arm64/boot/dts/freescale/Makefile
++++ b/arch/arm64/boot/dts/freescale/Makefile
+@@ -100,6 +100,7 @@ dtb-$(CONFIG_ARCH_MXC) += imx8mm-evk.dtb
++dtb-$(CONFIG_ARCH_MXC) += poly-tc8.dtb

@@ -1,6 +1,0 @@
-diff --git a/arch/arm64/boot/dts/freescale/Makefile b/arch/arm64/boot/dts/freescale/Makefile
-index abcdef1..1234567 100644
---- a/arch/arm64/boot/dts/freescale/Makefile
-+++ b/arch/arm64/boot/dts/freescale/Makefile
-@@ -X,0 +X,Y @@
-+dtb-$(CONFIG_ARCH_MXC) += poly-tc8.dtb
