@@ -1,4 +1,4 @@
-FILESEXTRAPATHS:prepend := "${THISDIR}/${PN}:"
+FILESEXTRAPATHS:prepend := "${THISDIR}:"
 
 SRC_URI += "file://poly-tc8.dts \
             file://patches/poly-tc8-makefile.patch"
