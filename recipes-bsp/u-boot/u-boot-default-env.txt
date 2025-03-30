@@ -1,0 +1,2 @@
+bootcmd=fastboot 0
+bootdelay=3
