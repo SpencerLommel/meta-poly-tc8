@@ -4,7 +4,7 @@ SRC_URI += "file://poly-tc8-fastboot.cfg"
 SRC_URI += "file://u-boot-default-env.txt"
 SRC_URI += "file://poly-tc8.dts"
 SRC_URI += "file://patches/0001-enable-fastboot.patch"
-SRC_URI += "file://patches/0002-use-poly-tc8-dtb.patch"
+# SRC_URI += "file://patches/0002-u-boot-configs.patch"
 
 
 DEPENDS += "u-boot-tools-native"
