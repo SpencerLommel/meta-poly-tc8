@@ -1,2 +1,3 @@
 bootcmd=fastboot 0
 bootdelay=3
+bootargs=console=ttymxc0,115200 earlycon
