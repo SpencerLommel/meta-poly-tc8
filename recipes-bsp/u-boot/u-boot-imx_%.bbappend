@@ -1,10 +1,14 @@
 FILESEXTRAPATHS:prepend := "${THISDIR}:"
+FILESEXTRAPATHS:prepend := "${THISDIR}/files:"
+
 
 SRC_URI += "file://poly-tc8-fastboot.cfg"
 SRC_URI += "file://u-boot-default-env.txt"
 SRC_URI += "file://poly-tc8.dts"
 SRC_URI += "file://patches/0001-enable-fastboot.patch"
 # SRC_URI += "file://patches/0002-u-boot-configs.patch"
+SRC_URI += "file://early_uart_debug.c"
+SRC_URI += "file://patches/0002-call-early-uart-debug.patch"
 
 
 DEPENDS += "u-boot-tools-native"
@@ -27,4 +31,9 @@ do_compile:append() {
 do_install:append() {
     install -d ${D}${datadir}
     install -m 0644 ${S}/u-boot-initial-env ${D}${datadir}/u-boot-initial-env
+}
+
+do_configure:append() {
+    echo "obj-y += early_uart_debug.o" >> ${S}/board/freescale/imx8mm_evk/Makefile
+    cp ${WORKDIR}/early_uart_debug.c ${S}/board/freescale/imx8mm_evk/
 }
