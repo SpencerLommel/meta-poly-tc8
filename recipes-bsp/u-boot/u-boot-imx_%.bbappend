@@ -7,8 +7,7 @@ SRC_URI += "file://u-boot-default-env.txt"
 SRC_URI += "file://poly-tc8.dts"
 SRC_URI += "file://patches/0001-enable-fastboot.patch"
 # SRC_URI += "file://patches/0002-u-boot-configs.patch"
-SRC_URI += "file://early_uart_debug.c"
-SRC_URI += "file://patches/0002-call-early-uart-debug.patch"
+SRC_URI += "file://spl_uart_test.c"
 
 
 DEPENDS += "u-boot-tools-native"
@@ -17,6 +16,10 @@ do_configure:append() {
     echo ">>>> Injecting extra U-Boot configs"
     cat ${WORKDIR}/poly-tc8-fastboot.cfg >> ${S}/configs/imx8mm_evk_defconfig
     install -m 0644 ${WORKDIR}/poly-tc8.dts ${S}/arch/arm/dts/
+    echo "#define CONFIG_MXC_UART_BASE 0x30890000" >> ${S}/include/configs/imx8mm_evk.h
+
+    echo "obj-y += spl_uart_test.o" >> ${S}/board/freescale/imx8mm_evk/Makefile
+    cp ${WORKDIR}/spl_uart_test.c ${S}/board/freescale/imx8mm_evk/
 }
 
 do_compile:prepend() {
@@ -31,9 +34,4 @@ do_compile:append() {
 do_install:append() {
     install -d ${D}${datadir}
     install -m 0644 ${S}/u-boot-initial-env ${D}${datadir}/u-boot-initial-env
-}
-
-do_configure:append() {
-    echo "obj-y += early_uart_debug.o" >> ${S}/board/freescale/imx8mm_evk/Makefile
-    cp ${WORKDIR}/early_uart_debug.c ${S}/board/freescale/imx8mm_evk/
 }
