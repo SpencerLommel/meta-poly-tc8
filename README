@@ -1,3 +1,11 @@
+Because the Poly TC8 ships with an older rev of the imx8mm evk along with kernel 5.10 we are using Yocto hardknott to get a working build before porting it up to kernel 6.0+
+
+Check here for more info on Yocto release versions
+https://wiki.yoctoproject.org/wiki/Releases
+
+This will eventually be ported to Scarthgap or Walnascar but due to some compatibility issues, this is the only supported Yocto version for now.
+
+
 This README file contains information on the contents of the meta-poly-tc8 layer.
 
 Please see the corresponding sections below for details.
