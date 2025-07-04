@@ -1,0 +1,12 @@
+diff --git a/arch/arm/dts/Makefile b/arch/arm/dts/Makefile
+index 29d81b0f888..67e974e1e66 100644
+--- a/arch/arm/dts/Makefile
++++ b/arch/arm/dts/Makefile
+@@ -864,6 +864,7 @@ dtb-$(CONFIG_ARCH_IMX8M) += \
+ 	imx8mm-venice-gw72xx-0x.dtb \
+ 	imx8mm-venice-gw73xx-0x.dtb \
+ 	imx8mm-verdin.dtb \
++        imx8mm-poly-lcc-proto.dtb \
+ 	phycore-imx8mm.dtb \
+ 	imx8mn-ddr3l-evk.dtb \
+ 	imx8mn-ddr4-evk.dtb \
