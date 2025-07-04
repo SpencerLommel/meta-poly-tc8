@@ -1,0 +1,17 @@
+# imx-boot SOC_TARGET
+SOC_TARGET=SOC_IMX8MM
+
+# FLASH_HEADER is the flash header container for imx-boot
+FLASH_HEADER=flash.bin
+
+# IMX_BOOT_CONF is the configuration for imx-boot. It is a mandatory option
+IMX_BOOT_CONF=imx8mm_dcd.cfg
+
+# DDR_FW is the DDR firmware
+DDR_FW=lpddr4_pmu_train_1d_dmem.fw,lpddr4_pmu_train_1d_imem.fw,lpddr4_pmu_train_2d_dmem.fw,lpddr4_pmu_train_2d_imem.fw
+
+# UBOOT_ELF is the u-boot-spl.bin
+UBOOT_ELF=u-boot-spl.bin
+
+# SECO_FW is the SECO firmware for i.MX8MM
+SECO_FW=mx8mm_sec_bl31.bin
