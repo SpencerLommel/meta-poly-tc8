@@ -1,9 +1,10 @@
 FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
 
-# We only need the DTS, the patch, and the imx-boot config file
+# The SRC_URI now only needs to apply our single, comprehensive patch 
+# and the separate imx-boot configuration file.
+# The patch handles creating the .dts file, so we don't list it here.
 SRC_URI_append = " \
-    file://imx8mm-poly-lcc-proto.dts \
-    file://0001-add-poly-tc8-dtb.patch \
+    file://0001-poly-tc8-board-support.patch \
     file://imx8mm_poly_tc8_sd_config \
 "
 
